@@ -23,7 +23,7 @@ def load_model():
     return joblib.load("model.pkl")
 
 model = load_model()
-st.success("🚀 Model loaded from Google Drive (cached)")
+st.success("Model loaded from Google Drive (cached) :)")
 
 
 ############################################################
@@ -36,9 +36,9 @@ with open("feature_columns.json") as f:
 ############################################################
 # UI SECTIONS — 3 PAGE INPUT COLLECTION
 ############################################################
-st.title("🧠 AI-Driven Thyroid Cancer Risk Assessor")
+st.title("🩺 AI-Driven Thyroid Cancer Risk Assessor")
 
-tab1, tab2, tab3 = st.tabs(["👤 Demographics", "🧬 Medical History", "🧪 Lab Values"])
+tab1, tab2, tab3 = st.tabs(["👤 Demographics", "🧬 Lifestyle", "🧪 Lab & Clinical Details"])
 data = {}
 
 # TAB 1 ----------------------------------
@@ -47,7 +47,7 @@ with tab1:
     col1,col2,col3 = st.columns(3)
     with col1: data["Age"] = st.number_input("Age",1,120,30)
     with col2: data["Gender"] = st.radio("Gender",["Male","Female"],horizontal=True)
-    with col3: data["Country"] = st.radio("Country",["India","USA","UK","Japan","Brazil"],horizontal=True)
+    with col3: data["Country"] = st.radio("Country",["India","China","Nigeria","Russia","Brazil"],horizontal=True)
 
 # TAB 2 ----------------------------------
 with tab2:
@@ -160,4 +160,4 @@ if st.button("🔍 Diagnose"):
         st.text(str(e))
 
 
-st.caption("Clinical-grade Thyroid AI • Built by Harish 🔥")
+st.caption("Clinical-grade Thyroid Predictor AI • Built by Group 5 :)")
